@@ -9,11 +9,16 @@ namespace C_Basics
         static void Main(string[] args)
         {
 
-             LearnOperators.GetOperatorsExercise();
-             LearnOperators.GetOperatorsExerciseSecond();
+             //LearnOperators.GetOperatorsExercise();
+             //LearnOperators.GetOperatorsExerciseSecond();
 
-            Student.GetGrade();
-            Student.GetGradeIfElse();
+            //Student.GetGrade();
+            //Student.GetGradeIfElse();
+
+            AssignmentExercises.GetPrimeNumber();
+            AssignmentExercises.GetPalindromeNumber();
+            AssignmentExercises.GetReverseNumber();
+            AssignmentExercises.GetArmstrongNumberThreedigit();
 
             //C_Basics.Loops.Loops.CallLoop();
             //CarCaller.GetCar();
@@ -66,9 +71,9 @@ namespace C_Basics
 
             //PrimeNumber.checkPrime();
 
-            PrimeNumber.CheckStringStartsWithAUsingLamda();
+            //PrimeNumber.CheckStringStartsWithAUsingLamda();
 
-            PrimeNumber.CheckListStartsWithAUsingLamda();
+            //PrimeNumber.CheckListStartsWithAUsingLamda();
 
 
         }
