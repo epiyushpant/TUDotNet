@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>C_Basics</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Class\PartialClass\NewFolder\" />
+    <Folder Include="Student\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Class\MultipleInheritance\DiamondProblemSolution.cs" />
+  </ItemGroup>
+</Project>
