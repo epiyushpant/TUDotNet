@@ -1,2 +1,11 @@
 test file
 Nepal 
+
+
+git status: Kun Changes vayeko tha hunxa. every time check garnu parxa kun kun file,folder changes vayo vanerw
+
+git add .a: changes haru lai package banayerw pathauna lako
+
+git commit: changes lai title/Message deko. record vayerw basxa
+
+git push (Kun branch ma ho) : finally cloud ma gayerw rakheko
