@@ -5,18 +5,18 @@ namespace C_Basics.Oop.Inheritance.Types.Hier
     // Very simple hierarchical inheritance example for students
     public class Animal
     {
-        public virtual void Eat() => Console.WriteLine("Animal: eats food.");
+        public  void Eat() => Console.WriteLine("Animal: eats food.");
     }
 
     public class Dog : Animal
     {
-        public override void Eat() => Console.WriteLine("Dog: eats dog food.");
+       // public override void Eat() => Console.WriteLine("Dog: eats dog food.");
         public void Bark() => Console.WriteLine("Dog: barks.");
     }
 
     public class Cat : Animal
     {
-        public override void Eat() => Console.WriteLine("Cat: eats cat food.");
+        //public override void Eat() => Console.WriteLine("Cat: eats cat food.");
         public void Meow() => Console.WriteLine("Cat: meows.");
     }
 

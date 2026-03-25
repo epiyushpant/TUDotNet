@@ -25,7 +25,7 @@
             Console.WriteLine("Now calling from child class");
 
             Dog dog = new Dog();
-            dog.Eat();
+            dog.Eat(); //
             dog.Bark(); 
 
             

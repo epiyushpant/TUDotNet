@@ -1,4 +1,5 @@
 ﻿using C_Basics.Assignment;
+using C_Basics.Class.Static;
 using C_Basics.ExceptionHandlingDemo;
 using C_Basics.Oop.Encapsulation; 
 using C_Basics.Oop.Polymorphism;
@@ -39,9 +40,9 @@ namespace C_Basics
             //DemoExceptionHandling.FormatExceptionHandling();
 
 
-             BankAccount.CallEncapsulationBankDemo();
+            // BankAccount.CallEncapsulationBankDemo();
 
-            
+            UserSessionDemo.RunDemo();
 
             //BankAccEH.CallCustomExceptionDemo();
 

@@ -46,28 +46,16 @@
             parentRefChild.Display(); // Outputs: Parent Class Display Method (Hidden method)
 
 
-            //Method Hiding vs Method Overriding:
+            // Explanation: Method hiding occurs when a method in a derived class has the same name as a method in the base class,
+            // but is not marked with the 'override' keyword.
+            // In this example, the 'Display' method in the Child class hides the 'Display' method in the Parent class.
 
-            //With method overriding, you can re-implement only virtual methods. On the other hand, with Method Hiding, you can re-implement any methods.
 
-            // In method overriding, the derived class provides a new implementation for a method defined in the base class using the 'override' keyword.
-            // In method hiding, the derived class defines a new method with the same name as a method in the base class using the 'new' keyword.
+            parentRefChild.Display(); // Outputs: Parent Class Display Method (Hidden method) , 
+            //because the method is hidden, not overridden. The type of the reference (Parent) determines which method is called for hidden methods,
+            //while the type of the object (Child) determines which method is called for overridden methods.
 
-            // When a base class reference points to a derived class object:
-            // For overridden methods, the derived class's implementation is called (dynamic binding).
-            // For hidden methods, the base class's implementation is called (static binding).
-
-            /*
-             Note : parent class reference variable even if created by using the child class instance, 
-            cannot access any members which are purely defined inside the child class but can call
-            the overriding methods of the child class because overridden members are not considered
-            as pure child class members, but the members which are re-implemented inside the child 
-            class by using the approach of hiding are considered as pure child class members and
-            cannot be accessed by Parent reference variable
-
-            */
-
-}
-}
+        }
+    }
 }
 
