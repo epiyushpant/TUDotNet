@@ -1,4 +1,6 @@
 ﻿using C_Basics.Assignment;
+using C_Basics.ExceptionHandlingDemo;
+using C_Basics.Oop.Encapsulation; 
 using C_Basics.Oop.Polymorphism;
 using C_Basics.Operators;
 
@@ -9,16 +11,16 @@ namespace C_Basics
         static void Main(string[] args)
         {
 
-             //LearnOperators.GetOperatorsExercise();
-             //LearnOperators.GetOperatorsExerciseSecond();
+            //LearnOperators.GetOperatorsExercise();
+            //LearnOperators.GetOperatorsExerciseSecond();
 
             //Student.GetGrade();
             //Student.GetGradeIfElse();
 
-            AssignmentExercises.GetPrimeNumber();
-            AssignmentExercises.GetPalindromeNumber();
-            AssignmentExercises.GetReverseNumber();
-            AssignmentExercises.GetArmstrongNumberThreedigit();
+            //AssignmentExercises.GetPrimeNumber();
+            //AssignmentExercises.GetPalindromeNumber();
+            //AssignmentExercises.GetReverseNumber();
+            //AssignmentExercises.GetArmstrongNumberThreedigit();
 
             //C_Basics.Loops.Loops.CallLoop();
             //CarCaller.GetCar();
@@ -37,6 +39,11 @@ namespace C_Basics
             //DemoExceptionHandling.FormatExceptionHandling();
 
 
+             BankAccount.CallEncapsulationBankDemo();
+
+            
+
+            //BankAccEH.CallCustomExceptionDemo();
 
             //TestSingleInheritance.GetCallInheritance();
 
