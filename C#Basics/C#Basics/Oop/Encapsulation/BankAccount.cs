@@ -2,8 +2,9 @@
 {
     public class BankAccount
     {
-        private double balance;
+        private  double balance;
         private string accountNumber;
+
 
         public BankAccount(string accountNumber, double initialBalance)
         {
@@ -20,6 +21,12 @@
         //{
         //    get { return balance; }
         //}
+
+        public string AccountNumber
+        {
+            get { return accountNumber; }
+            private set { accountNumber = value; } // Private setter to prevent external modification
+        }
 
         public void Deposit(double amount)
         {
@@ -43,20 +50,29 @@
             }
         }
 
+        public void DisplayAccountInfo()
+        {
+            Console.WriteLine($"Account Number: {accountNumber}, Balance: {balance}");
+        }
+
+    }
+
+    public class CallerClass
+    {
 
         public static void CallEncapsulationBankDemo()
         {
-            BankAccount account = new BankAccount("AC: 400", 5000 );
+            BankAccount account = new BankAccount("AC: 400", 5000);
             //getter only cant set it from here 
-            //var amount = account.AccountNumber.ToString();
+            var amount = account.AccountNumber.ToString();
             //account.AccountNumber = 7000; // This line would cause a compile-time error
 
+           // account.balance = 10000000000;
             account.Deposit(500);
             account.Withdraw(2000);
+            account.DisplayAccountInfo();
 
         }
-
-
     }
 
 }

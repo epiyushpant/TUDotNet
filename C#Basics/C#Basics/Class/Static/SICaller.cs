@@ -6,7 +6,7 @@
         public static void GetBankAccount()
         {
             BankAccount acc1 = new BankAccount("Piyush", 5000);
-            BankAccount acc2 = new BankAccount("Sarita", 8000);
+            BankAccount acc2 = new BankAccount("Swopnil", 8000);
 
             acc1.Deposit(1500);
             acc1.DisplayBalance();
