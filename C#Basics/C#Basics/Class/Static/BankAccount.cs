@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace C_Basics.Class.Static
+﻿namespace C_Basics.Class.Static
 {
     public class BankAccount
     {
@@ -42,7 +36,4 @@ namespace C_Basics.Class.Static
             Console.WriteLine($"{AccountHolder}'s balance: {Balance}");
         }
     }
-
-  
-
 }

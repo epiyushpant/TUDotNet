@@ -24,13 +24,16 @@
         }
     }
 
-    // ❌ Attempting multiple inheritance
+     //❌ Attempting multiple inheritance
     //class D : B, C   // ❌ Error here
     //{
+
     //}
 
+
     // Explanation: 
-    //A class inherits from two classes that both inherit from the same base class, creating multiple paths to the same ancestor.
+    //A class inherits from two classes that both inherit from the same base class,
+    //creating multiple paths to the same ancestor.
     //This causes ambiguity about which version of a method or property should be used.
     // To resolve the diamond problem, we can use interfaces
 }
