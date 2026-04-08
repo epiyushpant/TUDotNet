@@ -19,40 +19,41 @@ namespace LearnADODotnet.Models
         string connectionString = configuration.GetConnectionString("MyDbConnection")!;
 
         //To View all employees details    
-        public IEnumerable<Employee> GetAllEmployees()
+        
+       public IEnumerable<Employee> GetAllEmployees()
         {
-            List<Employee> lstemployee = new List<Employee>();
-
-            using (SqlConnection con = new SqlConnection(connectionString))
-            {
-                SqlCommand cmd = new SqlCommand("spGetAllEmployees", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                con.Open();
-                SqlDataReader rdr = cmd.ExecuteReader();
-
-                while (rdr.Read())
-                {
-                    Employee employee = new Employee();
-
-                    employee.EmployeeId = Convert.ToInt32(rdr["EmployeeID"]);
-                    employee.Name = rdr["Name"].ToString();
-                    employee.Gender = rdr["Gender"].ToString();
-                    employee.Department = rdr["Department"].ToString();
-                    employee.City = rdr["City"].ToString();
-
-                    lstemployee.Add(employee);
-                }
-                con.Close();
-            }
-            return lstemployee;
-
-
+            //List<Employee> lstemployee = new List<Employee>();
 
             //using (SqlConnection con = new SqlConnection(connectionString))
             //{
-            //    return con.Query<Employee>("spGetAllEmployees", commandType: CommandType.StoredProcedure).ToList();
+            //    SqlCommand cmd = new SqlCommand("spGetAllEmployees", con);
+            //    cmd.CommandType = CommandType.StoredProcedure;
+
+            //    con.Open();
+            //    SqlDataReader rdr = cmd.ExecuteReader();
+
+            //    while (rdr.Read())
+            //    {
+            //        Employee employee = new Employee();
+
+            //        employee.EmployeeId = Convert.ToInt32(rdr["EmployeeID"]);
+            //        employee.Name = rdr["Name"].ToString();
+            //        employee.Gender = rdr["Gender"].ToString();
+            //        employee.Department = rdr["Department"].ToString();
+            //        employee.City = rdr["City"].ToString();
+
+            //        lstemployee.Add(employee);
+            //    }
+            //    con.Close();
             //}
+            //return lstemployee;
+
+
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                return con.Query<Employee>("spGetAllEmployees", commandType: CommandType.StoredProcedure).ToList();
+            }
 
         }
 
