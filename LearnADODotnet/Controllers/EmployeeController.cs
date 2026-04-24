@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace LearnADODotnet.Controllers
 {
-    [Route("Employee")]
+    //[Route("Employee")]
     public class EmployeeController : Controller
     {
         EmployeeDataAccessLayer objemployee;
@@ -14,8 +14,7 @@ namespace LearnADODotnet.Controllers
             objemployee = new EmployeeDataAccessLayer(configuration);
         }
 
-        // GET: /Employee
-        [HttpGet("")]
+        // GET: /Employee/Index (conventional)
         public IActionResult Index()
         {
             List<Employee> lstEmployee = objemployee.GetAllEmployees().ToList();
@@ -30,15 +29,14 @@ namespace LearnADODotnet.Controllers
             return View(viewModel);
         }
 
-        // GET: /Employee/Create
-        [HttpGet("Create")]
+        // GET: /Employee/Create (conventional)
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: /Employee/Create
-        [HttpPost("Create")]
+        // POST: /Employee/Create (conventional)
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind] Employee employee)
         {
@@ -50,8 +48,7 @@ namespace LearnADODotnet.Controllers
             return View(employee);
         }
 
-        // GET: /Employee/Edit/5
-        [HttpGet("Edit/{id}")]
+        // GET: /Employee/Edit/5 (conventional)
         public IActionResult Edit(int? id)
         {
             if (id == null)
@@ -67,8 +64,8 @@ namespace LearnADODotnet.Controllers
             return View(employee);
         }
 
-        // POST: /Employee/Edit/5
-        [HttpPost("Edit/{id}")]
+        // POST: /Employee/Edit/5 (conventional)
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, [Bind] Employee employee)
         {
@@ -84,8 +81,8 @@ namespace LearnADODotnet.Controllers
             return View(employee);
         }
 
-        // GET: /Employee/Details/5
-        [HttpGet("Details/{id}")]
+        // GET: /Employee/Details/5 (attribute routing)
+        [Route("Employee/Details/{id}")]
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -101,8 +98,7 @@ namespace LearnADODotnet.Controllers
             return View(employee);
         }
 
-        // GET: /Employee/Delete/5
-        [HttpGet("Delete/{id}")]
+        // GET: /Employee/Delete/5 (conventional)
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,8 +114,8 @@ namespace LearnADODotnet.Controllers
             return View(employee);
         }
 
-        // POST: /Employee/Delete/5
-        [HttpPost("Delete/{id}")]
+        // POST: /Employee/Delete/5 (conventional)
+        [HttpPost]
         [ActionName("DeleteConfirmed")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int? id)

@@ -19,7 +19,8 @@ namespace LearnADODotnet.Models
         string connectionString = configuration.GetConnectionString("MyDbConnection")!;
 
         //To View all employees details    
-        public IEnumerable<Employee> GetAllEmployees()
+        
+       public IEnumerable<Employee> GetAllEmployees()
         {
             List<Employee> lstemployee = new List<Employee>();
 

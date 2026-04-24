@@ -1,0 +1,76 @@
+Default behavior:
+
+Each .cshtml file in the Pages folder automatically becomes an endpoint.
+Example: Pages/Index.cshtml → /Index route.
+Pages/Privacy.cshtml → /Privacy route.
+Pages/Error.cshtml → /Error route.
+
+Root page:
+Pages/Index.cshtml is mapped to both / and /Index.
+This makes it the default landing page.
+
+Folder-based routing:
+If you place a file in a subfolder, the folder name becomes part of the route.
+Example: Pages/Admin/Users.cshtml → /Admin/Users.
+
+
+
+Middleware 
+---------------------------------------------------------
+
+using System;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Hosting;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+// Global middleware
+app.Use(async (context, next) =>
+{
+    Console.WriteLine($"Global middleware: Request for {context.Request.Path}");
+    await next.Invoke();
+    Console.WriteLine("Global middleware: Response sent");
+});
+
+// Branch for /admin
+app.Map("/admin", adminApp =>
+{
+    adminApp.Use(async (context, next) =>
+    {
+        Console.WriteLine("Admin middleware: Before");
+        await next.Invoke();
+        Console.WriteLine("Admin middleware: After");
+    });
+
+    adminApp.Run(async context =>
+    {
+        await context.Response.WriteAsync("Hello Admin! This is the admin branch.");
+    });
+});
+
+// Branch for /user
+app.Map("/user", userApp =>
+{
+    userApp.Use(async (context, next) =>
+    {
+        Console.WriteLine("User middleware: Before");
+        await next.Invoke();
+        Console.WriteLine("User middleware: After");
+    });
+
+    userApp.Run(async context =>
+    {
+        await context.Response.WriteAsync("Hello User! This is the user branch.");
+    });
+});
+
+// Default route
+app.Run(async context =>
+{
+    await context.Response.WriteAsync("Hello World! This is the default route.");
+});
+
+app.Run();
+

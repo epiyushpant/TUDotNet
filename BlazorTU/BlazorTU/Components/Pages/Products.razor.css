@@ -1,0 +1,72 @@
+.product-page {
+  max-width: 720px;
+  margin: 24px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #111827;
+}
+
+.product-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: linear-gradient(180deg,#f8fafc,#ffffff);
+  margin-bottom: 8px;
+  border: 1px solid #e6e9ee;
+  font-weight: 600;
+}
+
+.product-item .price {
+  color: #0b5cff;
+  font-weight: 700;
+}
+
+.product-form .form-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.product-form label {
+  min-width: 70px;
+  color: #374151;
+}
+
+.product-form input[type="text"],
+.product-form input[type="number"] {
+  flex: 1 1 auto;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  outline: none;
+}
+
+.product-form .btn-primary {
+  background: linear-gradient(180deg,#2563eb,#1d4ed8);
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.product-form .btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.validation-message {
+  color: #dc2626;
+  font-size: 0.9rem;
+}
