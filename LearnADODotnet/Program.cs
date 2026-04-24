@@ -22,6 +22,9 @@ namespace LearnADODotnet
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            // Register custom request logging middleware
+            app.UseMiddleware<Middleware.RequestLoggingMiddleware>();
+
             app.UseRouting();
 
             app.UseAuthorization();
@@ -29,12 +32,6 @@ namespace LearnADODotnet
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllers(); // Attribute routing
-            //});
-
 
             app.Run();
         }
