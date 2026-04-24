@@ -1,0 +1,84 @@
+﻿@page "/products"
+@using BlazorTU.Model
+@using System.Linq
+@using Microsoft.AspNetCore.Components.Forms
+@rendermode InteractiveServer
+@inject IProductService productService
+
+<div class="product-page">
+    <h3>Product List</h3>
+
+    <ul class="product-list">
+        @foreach (var p in products)
+        {
+            <li class="product-item">@p.Name <span class="price">$@p.Price</span></li>
+        }
+    </ul>
+
+    <h3>Add / Edit Product</h3>
+
+    <EditForm Model="@product" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit" 
+              class="product-form" FormName="productForm" >
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="form-row">
+            <label>Name:</label>
+            <InputText @bind-Value="product.Name" />
+            <ValidationMessage For="@(() => product.Name)" />
+        </div>
+
+        <div class="form-row">
+            <label>Price:</label>
+            <InputNumber @bind-Value="product.Price" TValue="decimal"  />
+            <ValidationMessage For="@(() => product.Price)" />
+        </div>
+
+        <button type="submit" class="btn-primary">Add Product</button>
+    </EditForm>
+</div>
+
+@code {
+    private Product product = new Product();
+    private List<Product> products = new();
+
+    protected override void OnInitialized()
+    {
+        products = productService.GetProducts().ToList();
+    }
+
+    
+    private void HandleValidSubmit() { 
+        Console.WriteLine($"Submitting product: Name='{product.Name}', Price={product.Price}");
+        productService.AddProduct(new Product { Name = product.Name, Price = product.Price }); 
+        products = productService.GetProducts().ToList(); 
+        product = new Product(); StateHasChanged();
+    }
+
+    private void HandleInvalidSubmit(EditContext editContext)
+    {
+        // Log validation messages to help debugging
+        var messages = editContext.GetValidationMessages();
+        foreach (var msg in messages)
+        {
+            Console.WriteLine($"Validation: {msg}");
+        }
+    }
+
+
+    //Todos 
+
+    //routing 
+    //data binding one way 2 way 
+   
+
+    //Note : here we have implemented client side validation using data annotations and EditForm component .
+    
+    //Explore in server side validation and add some server side validation on this project . 
+    //Explore on life cycle event such as onInitializedAsync and onAfterRenderAsync and implement them in this project .
+    //Explore razor class library and what are the benefits of razor class library and implement razor class library in this project .
+
+
+
+
+}
