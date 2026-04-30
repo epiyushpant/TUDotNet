@@ -1,0 +1,55 @@
+Chapter One 
+1. Differentiate .NET Framework and .NET Core .
+2. What is .NET Framework . Explain the key features of .NET Framework .
+3. What is RAD model. What are advantage of RAD model.
+4. Explain .NET Framework architecture with clean diagram. ( 2 phase compilation process) 
+
+Chapter Two and Three
+1. What is constructor ? Explain the use of constructor in C# with a code example. 
+2. Differentiate method overloading and method overriding in C# . 
+3. Write a C# program to input a number from the user and check whether it is prime or not.
+4. Write a C# program to input a number from the user and reverse it.
+5. Write a C# program using method overloading to calculate the area of the circle, square and rectangle .
+6. Define encapsulation. Explain how encapsulation is implemented in C# with examples.
+7. Explain Exception Handling in .NET. Describe the use of try, catch, and finally blocks with an example.
+8. What is LINQ in C#? Explain advantages of using LINQ.  
+
+
+
+   Using C# and LINQ, write a simple query to find all even numbers from the following list:
+   List<int> numbers = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }; 
+
+Chapter Four and Five 
+1. Explain MVC architecture in .NET with clean diagram. 
+2. Explain routing in .NET . Differentiate between attribute routing and conventional routing in .NET . 
+3. Explain ADO.NET architecture with clean diagram . 
+4. Explain the difference between ExecuteReader, ExecuteScalar, and ExecuteNonQuery in ADO.NET.
+5. Using C# and ADO.NET, write a method that inserts a new record into the Course table. 
+The table contains the following fields: CourseId, CourseName, Credits, and Instructor
+
+
+Chapter 6 
+1. What is Blazor? Explain its basic concept and describe how data binding is
+implemented in Blazor with an example.
+2. Explain one way binding and two way binding in blazor. 
+3. Describe hosting models in blazor. 
+4. What is event handling. Explain event handling with code example in blazor. 
+
+
+Chapter 7 
+
+1. What is Xamarin? Explain its purpose, key features, and how it is used for cross-
+platform mobile application development.
+2. Differentiate Xamarin and Xamarin forms. 
+
+
+//Extra 
+9. Implicit and explicit conversion in c# . 
+10. Inheritance and types of inheritance in c# . 
+11. Diamond problem in c# ? how to resolve it ? 
+12. Abstraction in c# .
+
+
+
+
+
